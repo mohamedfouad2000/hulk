@@ -82,15 +82,6 @@ class SearchTitle extends StatelessWidget {
               val: "   Enter product Name",
               controller: searchCon,
               preicon: Icons.search,
-              onPressed: () {
-                if (formkey.currentState!.validate()) {
-                  NavegatorPush(
-                      context,
-                      ProductPage(
-                        searchName: searchCon.text,
-                      ));
-                }
-              },
               hintText: "Search",
             ),
           ),
@@ -101,8 +92,8 @@ class SearchTitle extends StatelessWidget {
               fun: () {
                 NavegatorPush(
                     context,
-                    const ProductPage(
-                      searchName: " ",
+                    ProductPage(
+                      searchName: searchCon.text,
                     ));
               },
               textWidget: Text(

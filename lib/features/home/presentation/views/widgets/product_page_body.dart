@@ -69,12 +69,11 @@ class _ProductPageBodyState extends State<ProductPageBody> {
                                       style: StylesData.font20,
                                     ),
                                     PopupMenuButton(
+                                      color: Colors.white,
                                       padding: EdgeInsets.zero,
                                       itemBuilder: (context) => [
                                         PopupMenuItem(
                                             onTap: () {
-                                              print(
-                                                  "/////////////////////// Supported /////////////////////");
                                               HomeCubit.get(context)
                                                   .filtterData(
                                                 x: 0,
@@ -202,6 +201,7 @@ class _ProductPageBodyState extends State<ProductPageBody> {
                                   ),
                                   PopupMenuButton(
                                     padding: EdgeInsets.zero,
+                                    color: Colors.white,
                                     itemBuilder: (context) => [
                                       PopupMenuItem(
                                           onTap: () {

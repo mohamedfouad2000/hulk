@@ -23,7 +23,7 @@ class HomePageBody extends StatelessWidget {
               child: const Align(
                 alignment: Alignment.topCenter,
                 child: Header(
-                  height: 200,
+                  height: 300,
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:hulk/core/utils/size_config.dart';
 import 'package:lottie/lottie.dart';
 
 class FailureWidget extends StatelessWidget {
@@ -8,7 +9,7 @@ class FailureWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: SizeConfig.screenHeight! * .4,
       width: double.infinity,
       child: Center(
         child: Lottie.asset(

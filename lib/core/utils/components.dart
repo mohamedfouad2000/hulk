@@ -68,7 +68,7 @@ Widget customTextFormedFiled({
   var sufficon,
   String? hintText,
   var sufFunction,
-  required void Function()? onPressed,
+  // required void Function()? onPressed,
 }) =>
     TextFormField(
       controller: controller,
@@ -92,12 +92,9 @@ Widget customTextFormedFiled({
         contentPadding: const EdgeInsets.symmetric(vertical: 15),
         prefixIcon: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: IconButton(
-            onPressed: onPressed,
-            icon: Icon(
-              preicon,
-              size: 16,
-            ),
+          child: Icon(
+            preicon,
+            size: 16,
           ),
         ),
         border: const OutlineInputBorder(

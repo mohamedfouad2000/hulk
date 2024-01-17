@@ -11,7 +11,7 @@ Widget pageViewItem({
           height: SizeConfig.screenHeight! * .10,
         ),
         SizedBox(
-          height: SizeConfig.screenHeight! * .40,
+          height: SizeConfig.screenHeight! * .42,
           child: Center(
               child: Image.asset(
             image,

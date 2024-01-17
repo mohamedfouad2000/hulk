@@ -11,7 +11,7 @@ class SearchWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(
-          height: 120,
+          height: 150,
         ),
         const LogoImage(),
         const SizedBox(
