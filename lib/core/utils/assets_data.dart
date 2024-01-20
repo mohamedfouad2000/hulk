@@ -7,4 +7,5 @@ class AssetsData {
   static const onboarding2 = 'assets/images/b2.png';
   static const onboarding3 = 'assets/images/b3.png';
   static const product = 'assets/images/p.png';
+  static const backGround = 'assets/images/bac.jpg';
 }

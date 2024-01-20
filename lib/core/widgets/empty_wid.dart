@@ -7,7 +7,7 @@ class EmptyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
+      height: 180,
       width: double.infinity,
       child: Center(
         child: Lottie.asset(

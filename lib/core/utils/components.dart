@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hulk/core/utils/styles.dart';
 
-// import 'package:ecommers/core/utils/size_config.dart';
-// import 'package:ecommers/core/utils/size_config.dart';
-
 Widget defaultButton(
         {required VoidCallback fun,
         required textWidget,
@@ -67,10 +64,14 @@ Widget customTextFormedFiled({
   String val = "",
   var sufficon,
   String? hintText,
+  Function(String)? onChanged,
+  Function()? onTap,
   var sufFunction,
   // required void Function()? onPressed,
 }) =>
     TextFormField(
+      onChanged: onChanged,
+      onTap: onTap,
       controller: controller,
       obscureText: obscureText,
       keyboardType: type,
@@ -140,4 +141,8 @@ NavegatorPush(context, page) {
 Nav(context, page) {
   return Navigator.pushAndRemoveUntil(
       context, MaterialPageRoute(builder: (builder) => page), (route) => false);
+}
+
+Color colorHex(String color) {
+  return Color(int.parse(color.substring(1, 7), radix: 16) + 0xFF000000);
 }

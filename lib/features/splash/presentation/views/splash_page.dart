@@ -24,7 +24,7 @@ class _SplahViewState extends State<SplahView> {
       animate = true;
     });
 
-    await Future.delayed(const Duration(seconds: 8), () {
+    await Future.delayed(const Duration(seconds: 3), () {
       if (isBoarding) {
         Nav(context, const HomePage());
       } else {
@@ -49,7 +49,7 @@ class _SplahViewState extends State<SplahView> {
             child: Center(
               child: AnimatedOpacity(
                 opacity: animate ? 1 : 0,
-                duration: const Duration(seconds: 4),
+                duration: const Duration(seconds: 2),
                 child: const LogoImage(),
               ),
             ),

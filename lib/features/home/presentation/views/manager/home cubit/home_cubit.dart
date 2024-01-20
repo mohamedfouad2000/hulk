@@ -9,8 +9,6 @@ class HomeCubit extends Cubit<HomeState> {
   static HomeCubit get(context) => BlocProvider.of(context);
   final HomeRep homeRepo;
   ProductModel l = ProductModel();
-  ProductModel suppList = ProductModel();
-  ProductModel unSuppList = ProductModel();
 
   Future<void> getProduct({String? name}) async {
     emit(GetProductLoading());
@@ -25,39 +23,25 @@ class HomeCubit extends Cubit<HomeState> {
       l = list;
 
       print(l.sucsses);
-      if (list.data != null) {
-        getFillterData();
-      }
+      if (list.data != null) {}
     });
   }
 
-  void getFillterData() {
-    suppList.data = [];
-    unSuppList.data = [];
-
-    for (int i = 0; i <= l.data!.length - 1; i++) {
-      if (l.data![i].datumClass!.title.toString() == 'yahia') {
-        suppList.data?.add(l.data![i]);
-      } else {
-        unSuppList.data?.add(l.data![i]);
-      }
-    }
-    print("///////////////////////////////////// lenth ////////");
-    print(suppList.data?.length);
-    print(unSuppList.data?.length);
-  }
-
-  Future<void> filtterData({
-    required int x,
-  }) async {
+  void filtterData({required int id}) async {
     emit(GetProductLoading());
-
-    if (x == 0) {
-      emit(GetProductSucc(model: suppList));
-    } else if (x == 1) {
-      emit(GetProductSucc(model: unSuppList));
-    } else {
+    print(l.data!.length);
+    if (id == -1) {
       emit(GetProductSucc(model: l));
+    } else {
+      ProductModel fillterList = ProductModel();
+      fillterList.data = [];
+      for (int i = 0; i <= l.data!.length - 1; i++) {
+        if (l.data?[i].datumClass?.id == id) {
+          fillterList.data!.add(l.data![i]);
+        }
+      }
+      print(fillterList.data?.length);
+      emit(GetProductSucc(model: fillterList));
     }
   }
 }

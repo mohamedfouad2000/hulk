@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hulk/core/utils/components.dart';
 import 'package:hulk/core/utils/styles.dart';
 import 'package:hulk/features/home/data/Model/product_model/datum.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class ProductDetailsItem extends StatelessWidget {
   const ProductDetailsItem({
@@ -13,9 +15,6 @@ class ProductDetailsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color modelColor = model.datumClass!.color.toString() == '#17ded0'
-        ? const Color(0xFF007900)
-        : const Color(0xFFCC1100);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
@@ -26,9 +25,17 @@ class ProductDetailsItem extends StatelessWidget {
             CachedNetworkImage(
               height: 200,
               imageUrl: model.imagePath.toString(),
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) =>
-                  const Icon(Icons.error_outline_sharp),
+              placeholder: (context, url) =>
+                  LoadingAnimationWidget.newtonCradle(
+                size: 50,
+                color: Colors.grey,
+              ),
+              errorWidget: (context, url, er) => Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
+              ),
             ),
             const SizedBox(
               height: 5,
@@ -48,7 +55,8 @@ class ProductDetailsItem extends StatelessWidget {
                   width: 6.35,
                   height: 6.35,
                   decoration: ShapeDecoration(
-                    color: modelColor,
+                    color: colorHex(
+                        model.datumClass?.color.toString() ?? '#0xf123'),
                     shape: const OvalBorder(),
                   ),
                 ),
@@ -56,11 +64,12 @@ class ProductDetailsItem extends StatelessWidget {
                   width: 4,
                 ),
                 Text(
-                  model.datumClass!.title.toString() == 'yahia'
-                      ? 'Supporter'
-                      : model.datumClass!.title.toString(),
+                  model.datumClass!.title.toString(),
                   textAlign: TextAlign.center,
-                  style: StylesData.font19.copyWith(color: modelColor),
+                  style: StylesData.font19.copyWith(
+                    color: colorHex(
+                        model.datumClass?.color.toString() ?? '#0xf123'),
+                  ),
                 ),
               ],
             ),

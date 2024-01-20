@@ -9,10 +9,12 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-          child: ProductPageBody(
-        searchName: searchName,
-      )),
+      body: SafeArea(child: OrientationBuilder(builder: (context, o) {
+        return ProductPageBody(
+          searchName: searchName,
+          o: o,
+        );
+      })),
     );
   }
 }
