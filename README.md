@@ -1,16 +1,6 @@
 # hulk
 
-A new Flutter project.
+![Screenshot 2024-02-16 160851](https://github.com/mohamedfouad2000/hulk/assets/74192813/d3fb5a3d-b07e-4450-9048-c0f0566196e2)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
